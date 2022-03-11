@@ -1,14 +1,13 @@
-import Consulta from "./consulta.js";
+import Consulting from "./consulta.js";
 // se realiza una funcion para mostar la vista previa segun su nombre (preview)
-const previsualizarImagen = document
-  .getElementById("nombreAnimal")
+const imagePreview = document
+  .getElementById("animalName")
   .addEventListener("change", async () => {
-    const { animales } = await Consulta.getData();
-    const nombreAnimal = document.getElementById("nombreAnimal").value;
-    const buscadorImagen = await animales.find((i) => i.name == nombreAnimal)
-      .imagen;
+    const { animales } = await Consulting.getData();
+    const animalName = document.getElementById("animalName").value;
+    const findImage = await animales.find((i) => i.name == animalName).imagen;
     const preview = document.getElementById("preview");
-    preview.style.backgroundImage = `url(assets/imgs/${buscadorImagen})`;
+    preview.style.backgroundImage = `url(assets/imgs/${findImage})`;
   });
 
-export default previsualizarImagen;
+export default imagePreview;

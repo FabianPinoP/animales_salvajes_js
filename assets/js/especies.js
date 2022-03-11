@@ -1,12 +1,10 @@
-import Animales from "./animales.js";
+import Animals from "./animales.js";
 // se crean las clases hijas con su propio metodo
-class Leon extends Animales {
-  constructor(nombre, edad, img, comentarios, sonido) {
-    super(nombre, edad, img, comentarios, sonido);
+class Lion extends Animals {
+  constructor(name, age, img, comments, sound) {
+    super(name, age, img, comments, sound);
   }
-  Rugir = (audio) => {
-    console.log(audio);
-    console.log("hola");
+  Roar = (audio) => {
     document.getElementById("btn").addEventListener("click", () => {
       let etiquetaAudio = document.createElement("audio");
       etiquetaAudio.setAttribute("src", `/assets/sounds/${audio}`);
@@ -15,13 +13,11 @@ class Leon extends Animales {
   };
 }
 
-class Lobo extends Animales {
-  constructor(nombre, edad, img, comentarios, sonido) {
-    super(nombre, edad, img, comentarios, sonido);
+class Wolf extends Animals {
+  constructor(name, age, img, comments, sound) {
+    super(name, age, img, comments, sound);
   }
-  Aullar = (audio) => {
-    console.log(audio);
-    console.log("hola");
+  Howl = (audio) => {
     document.getElementById("btn").addEventListener("click", () => {
       let etiquetaAudio = document.createElement("audio");
       etiquetaAudio.setAttribute("src", `/assets/sounds/${audio}`);
@@ -30,13 +26,11 @@ class Lobo extends Animales {
   };
 }
 
-class Oso extends Animales {
-  constructor(nombre, edad, img, comentarios, sonido) {
-    super(nombre, edad, img, comentarios, sonido);
+class Bear extends Animals {
+  constructor(name, age, img, comments, sound) {
+    super(name, age, img, comments, sound);
   }
-  Gruñir = (audio) => {
-    console.log(audio);
-    console.log("hola");
+  Snarl = (audio) => {
     document.getElementById("btn").addEventListener("click", () => {
       let etiquetaAudio = document.createElement("audio");
       etiquetaAudio.setAttribute("src", `/assets/sounds/${audio}`);
@@ -45,13 +39,11 @@ class Oso extends Animales {
   };
 }
 
-class Serpiente extends Animales {
-  constructor(nombre, edad, img, comentarios, sonido) {
-    super(nombre, edad, img, comentarios, sonido);
+class Snake extends Animals {
+  constructor(name, age, img, comments, sound) {
+    super(name, age, img, comments, sound);
   }
-  Sisear = (audio) => {
-    console.log(audio);
-    console.log("hola");
+  Hiss = (audio) => {
     document.getElementById("btn").addEventListener("click", () => {
       let etiquetaAudio = document.createElement("audio");
       etiquetaAudio.setAttribute("src", `/assets/sounds/${audio}`);
@@ -60,13 +52,11 @@ class Serpiente extends Animales {
   };
 }
 
-class Aguila extends Animales {
-  constructor(nombre, edad, img, comentarios, sonido) {
-    super(nombre, edad, img, comentarios, sonido);
+class Eagle extends Animals {
+  constructor(name, age, img, comments, sound) {
+    super(name, age, img, comments, sound);
   }
-  Chillar = (audio) => {
-    console.log(audio);
-    console.log("hola");
+  Scream = (audio) => {
     document.getElementById("btn").addEventListener("click", () => {
       let etiquetaAudio = document.createElement("audio");
       etiquetaAudio.setAttribute("src", `/assets/sounds/${audio}`);
@@ -75,4 +65,4 @@ class Aguila extends Animales {
   };
 }
 
-export { Leon, Lobo, Oso, Serpiente, Aguila };
+export { Lion, Wolf, Bear, Snake, Eagle };

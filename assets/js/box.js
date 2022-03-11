@@ -1,9 +1,8 @@
-// se crea la funcion box recibe parametros desde la instancia 
+// se crea la funcion box recibe parametros desde la instancia
 // e inserta los datos en una tarjeta la cual se muestra una vez hecho el click en el formulario
 
-
-const box = (img, name, edad, comentario) => {
-  document.getElementById("boxAnimales").insertAdjacentHTML(
+const box = (img, name, age, comments) => {
+  document.getElementById("boxAnimals").insertAdjacentHTML(
     "afterbegin",
     `<div class="card bg-warning" style="width: 18rem;">
   <img id="btn-modal" type="button" data-toggle="modal" data-target="#exampleModal" src="assets/imgs/${img}" class="card-img-top" alt="">
@@ -17,14 +16,14 @@ const box = (img, name, edad, comentario) => {
 </div>
 `
   );
-// se agrega un escucha de tipo click para que al pinchar en la foto
-// se despliegue un modal con la informacion del animal ingresado
+  // se agrega un escucha de tipo click para que al pinchar en la foto
+  // se despliegue un modal con la informacion del animal ingresado
   document.getElementById("btn-modal").addEventListener("click", () => {
-    const mostrarModal = (document.getElementById(
-      "mostrarModal"
+    const showModal = (document.getElementById(
+      "showModal"
     ).innerHTML = `<img class="w-100 d-flex-justify-content-center" src="assets/imgs/${img}"> <h2 class="text-white text-center"> ${name}</h2>
-    <ul class="text-white text-center">  Edad: ${edad}</ul>
-    <ul class="text-white text-center"> Comentarios: ${comentario}</ul>
+    <ul class="text-white text-center">  Edad: ${age}</ul>
+    <ul class="text-white text-center"> Comentarios: ${comments}</ul>
     `);
   });
 };

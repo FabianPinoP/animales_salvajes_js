@@ -1,42 +1,42 @@
 // Se crea la clase constructora Padre con sus setter y getter
-class Animales {
-  constructor(nombre, edad, img, comentarios, sonido) {
-    let Nombre = nombre;
-    let Edad = edad;
+class Animals {
+  constructor(name, age, img, comments, sound) {
+    let Name = name;
+    let Age = age;
     let Img = img;
-    let Comentarios = comentarios;
-    let Sonido = sonido;
+    let Comments = comments;
+    let Sound = sound;
 
-    this.getNombre = () => Nombre;
-    this.getEdad = () => Edad;
+    this.getName = () => Name;
+    this.getAge = () => Age;
     this.getImg = () => Img;
-    this.getComentarios = () => Comentarios;
-    this.getSonido = () => Sonido;
+    this.getComments = () => Comments;
+    this.getSound = () => Sound;
 
-    this.setComentarios = (comentarios) => (Comentarios = comentarios);
-    this.setSonido = (sonido) => (Sonido = sonido);
+    this.setComments = (comments) => (Comments = comments);
+    this.setSound = (sound) => (Sound = sound);
   }
-  get Nombre() {
-    return this.getNombre();
+  get Name() {
+    return this.getName();
   }
-  get Edad() {
-    return this.getEdad();
+  get Age() {
+    return this.getAge();
   }
   get Img() {
     return this.getImg();
   }
-  get Comentarios() {
-    return this.getComentarios();
+  get Comments() {
+    return this.getComments();
   }
-  get Sonido() {
-    return this.getSonido();
+  get Sound() {
+    return this.getSound();
   }
-  set Comentarios(comentarios) {
-    return this.getComentarios(comentarios);
+  set Comments(comments) {
+    return this.getComments(comments);
   }
-  set Sonido(sonido) {
-    return this.getSonido(sonido);
+  set Sound(sound) {
+    return this.getSound(sound);
   }
 }
 
-export default Animales;
+export default Animals;

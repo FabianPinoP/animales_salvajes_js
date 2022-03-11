@@ -1,69 +1,53 @@
-import Consulta from "./consulta.js";
+import Consulting from "./consulta.js";
 import Box from "./box.js";
-import { Leon, Lobo, Oso, Serpiente, Aguila } from "./especies.js";
-import PrevisualizarImagen from "./imagenes.js";
+import { Lion, Wolf, Bear, Snake, Eagle } from "./especies.js";
+import ImagePreview from "./imagenes.js";
 // se captura informacion desde el formulario con evento click
-const formulario = document
-  .getElementById("btnRegistrar")
+const form = document
+  .getElementById("btnRegister")
   .addEventListener("click", async () => {
-    const nombreAnimal = document.getElementById("nombreAnimal").value;
-    const edad = document.getElementById("edad").value;
-    const comentarios = document.getElementById("comentarios").value;
-    const { animales } = await Consulta.getData();
-    const img = await animales.find((i) => i.name == nombreAnimal).imagen;
-    const sonido = animales.find((s) => s.name == nombreAnimal).sonido;
+    const animalName = document.getElementById("animalName").value;
+    const age = document.getElementById("age").value;
+    const comments = document.getElementById("comments").value;
+    const { animales } = await Consulting.getData();
+    const img = await animales.find((i) => i.name == animalName).imagen;
+    const sound = animales.find((s) => s.name == animalName).sonido;
     //se valida formulario y se crean instancias de las clases y se pasan parametros
-    // de las instancias al la funcion box y se llama a la funcion que reproduce el audio de cada animal 
-    const validarFormulario = (() => {
-      if (edad == "" || comentarios == "") {
+    // de las instancias al la funcion box y se llama a la funcion que reproduce el audio de cada animal
+    const formValidate = (() => {
+      if (age == "" || comments == "") {
         alert("por favor rellene el formulario completo");
-      } else if (nombreAnimal == "Leon") {
-        const leon = new Leon(nombreAnimal, edad, img, comentarios, sonido);
+      } else if (animalName == "Leon") {
+        const lion = new Lion(animalName, age, img, comments, sound);
+        Box(lion.getImg(), lion.getName(), lion.getAge(), lion.getComments());
+        lion.Roar(lion.getSound());
+      } else if (animalName == "Lobo") {
+        const wolf = new Wolf(animalName, age, img, comments, sound);
+        Box(wolf.getImg(), wolf.getName(), wolf.getAge(), wolf.getComments());
+        wolf.Howl(wolf.getSound());
+      } else if (animalName == "Oso") {
+        const bear = new Bear(animalName, age, img, comments, sound);
+        Box(bear.getImg(), bear.getName(), bear.getAge(), bear.getComments());
+        bear.Snarl(bear.getSound());
+      } else if (animalName == "Serpiente") {
+        const snake = new Snake(animalName, age, img, comments, sound);
         Box(
-          leon.getImg(),
-          leon.getNombre(),
-          leon.getEdad(),
-          leon.getComentarios()
+          snake.getImg(),
+          snake.getName(),
+          snake.getAge(),
+          snake.getComments()
         );
-        leon.Rugir(leon.getSonido());
-      } else if (nombreAnimal == "Lobo") {
-        const lobo = new Lobo(nombreAnimal, edad, img, comentarios, sonido);
+        snake.Hiss(snake.getSound());
+      } else if (animalName == "Aguila") {
+        const eagle = new Eagle(animalName, age, img, comments, sound);
         Box(
-          lobo.getImg(),
-          lobo.getNombre(),
-          lobo.getEdad(),
-          lobo.getComentarios()
+          eagle.getImg(),
+          eagle.getName(),
+          eagle.getAge(),
+          eagle.getComments()
         );
-        lobo.Aullar(lobo.getSonido());
-      } else if (nombreAnimal == "Oso") {
-        const oso = new Oso(nombreAnimal, edad, img, comentarios, sonido);
-        Box(oso.getImg(), oso.getNombre(), oso.getEdad(), oso.getComentarios());
-        oso.Gruñir(oso.getSonido());
-      } else if (nombreAnimal == "Serpiente") {
-        const serpiente = new Serpiente(
-          nombreAnimal,
-          edad,
-          img,
-          comentarios,
-          sonido
-        );
-        Box(
-          serpiente.getImg(),
-          serpiente.getNombre(),
-          serpiente.getEdad(),
-          serpiente.getComentarios()
-        );
-        serpiente.Sisear(serpiente.getSonido());
-      } else if (nombreAnimal == "Aguila") {
-        const aguila = new Aguila(nombreAnimal, edad, img, comentarios, sonido);
-        Box(
-          aguila.getImg(),
-          aguila.getNombre(),
-          aguila.getEdad(),
-          aguila.getComentarios()
-        );
-        aguila.Chillar(aguila.getSonido());
+        eagle.Scream(eagle.getSound());
       }
     })();
   });
-formulario;
+form;
